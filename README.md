@@ -61,5 +61,22 @@ WITH replication = {
 ```
 You know have a keyspace in both datacenters. Run `DESCRIBE SCHEMA;` to view your keyspace and replication strategy.
 
-## Create a table: *animals*
+## 8. Create a table: *animals*
+In CQL shell, run the following command to create a table called *animals*:
+```
+CREATE TABLE animals
+(animalId uui, 
+name varchar, 
+description varchar, 
+create_date timestamp, 
+PRIMARY KEY (animalid) );
+```
+To view table in keyspace, run `DESCRIBE KEYSPACE mykeyspace;`
 
+## 9. Insert data into your tables
+Find *insert_animal_queries.txt* in my repository for this project. 
+You can copy all the insert queries and paste them into CQL shell to add data to the table. 
+Run `DESCRIBE KEYSPACE mykeyspace;`
+Run `SELECT COUNT(animalId) FROM mykeyspace.animals;` to view the number of records inserted into your database.
+
+# 10. Schema
