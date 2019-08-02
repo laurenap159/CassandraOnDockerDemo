@@ -22,10 +22,10 @@ node3 - dc2
 
 ### Start First Node
 
-
+```
 docker run --name node1 -p 9042:9042 -e CASSANDRA_CLUSTER_NAME=LoClusters -e CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch -e CASSANDRA_DC=dc1 -d cassandra
+```
 
-Produces: 5631b7af91567ac6304cbc5e6059dac0dba6f37ba64fc56f23f0fe2a80d10175
 
 ### Inspect node1 to make sure that node2 & node3 can use node1 as seed node and join cluster
 
