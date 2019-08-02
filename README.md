@@ -46,4 +46,20 @@ Run `docker inspect --format='{{ .NetworkSettings.IPAddress }}' node1` for each 
 
 Run `docker exec -ti node1 nodetool status` for each node to see the status of the node.
 
+## 6. Execute CQL commands in the terminal
+Run `docker exec -ti node1 cqlsh` to run CQL shell.
+
+## 7. Create a keyspace which will be replicated to datacenter1 & datacenter2
+In CQL shell, run the following the create a keyspace:
+```
+CREATE KEYSPACE mykeyspace
+WITH replication = {
+	'class' : 'NetworkTopologyStrategy',
+	'datacenter1' : 1,
+	'datacenter2' : 1
+};
+```
+You know have a keyspace in both datacenters. Run `DESCRIBE SCHEMA;` to view your keyspace and replication strategy.
+
+## Create a table: *animals*
 
