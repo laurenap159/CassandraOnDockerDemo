@@ -12,6 +12,26 @@ After installing, you will have access to the docker terminal from the command l
 - [Mac Download](https://docs.docker.com/docker-for-mac/install/)
 
 
+## 3. Pull Docker and Cassandra Images
+First, login to Docker with the following command (all subsequent requests will be using these credentials):
+```
+docker login
+```
+Next, pull the The DataStax Server Image which is DataStax distribution of Apache Cassandra with additional capabilities of Search Engine, Spark Analytics and Graph Components.
+```
+docker pull datastax/dse-server:latest
+```
+
+## 4. Start your first Cassandra node on Docker
+The `docker run` command will create containers from the pulled images.
+Create *node1* using the following command:
+```
+docker run --name node1 -p 9042:9042 -e CASSANDRA_CLUSTER_NAME=MyCluster -e CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch -e CASSANDRA_DC=datacenter1 -d cassandra
+```
+
+
+
+
 ### Docker settings
 Ensure that the CPUs=2 and memory= ~4GB 
 Each node will require about 1.5 GB RAM to work properly and we will have 2 nodes.
