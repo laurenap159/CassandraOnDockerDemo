@@ -2,7 +2,7 @@
 Implementing Cassandra in Docker Containers
 
 ## 1. Create Docker Account
-As you may have assumed by the title, you will need Docker installed with access to the Docker Hub repository to pull the Cassandra images. Go to [Docker](https://hub.docker.com/) to create an account.
+You will need Docker installed with access to the Docker Hub repository to pull the Cassandra images. Go to [Docker](https://hub.docker.com/) to create an account. Save these credentials for step 3.
 
 ## 2. Download Docker
 Containers are platform independent, so choose your OS for download. 
