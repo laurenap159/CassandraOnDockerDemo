@@ -79,4 +79,10 @@ You can copy all the insert queries and paste them into CQL shell to add data to
 Run `DESCRIBE KEYSPACE mykeyspace;`
 Run `SELECT COUNT(animalId) FROM mykeyspace.animals;` to view the number of records inserted into your database.
 
-# 10. Schema
+## 10. Schema and Tracing
+In CQl shell, run `DESCRIBE SCHEMA;` to see the replication strategy. Likely, it will return "ONE".
+You can change the schema using `CONSISTENCY QUORUM` or another strategy and run various queries to compare the speed of different strategies. 
+
+In order to view all transactions for all nodes in the cluster when a query is executed, run the command in CQL shell `TRACING ON`
+
+Additionally, you'll receive a tracing_session_id for each event, and you can run `SHOW SESSION tracing_session_id` to view all transaction data. 
